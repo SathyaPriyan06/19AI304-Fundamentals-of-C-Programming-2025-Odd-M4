@@ -41,7 +41,71 @@
 ### Step 14: 
   Stop
 # Program:
+```
+#include <stdio.h>
+
+void validateDate()
+{
+    int dd, mm, yy;
+
+    printf("Enter date (DD/MM/YYYY): ");
+    scanf("%d/%d/%d", &dd, &mm, &yy);
+
+    if (yy < 1900 || yy > 9999)
+    {
+        printf("Year is not valid");
+        return;
+    }
+
+    if (mm < 1 || mm > 12)
+    {
+        printf("Month is not valid");
+        return;
+    }
+
+    if (mm == 2)
+    {
+        if ((yy % 400 == 0) || (yy % 4 == 0 && yy % 100 != 0))
+        {
+            if (dd >= 1 && dd <= 29)
+                printf("Date is valid");
+            else
+                printf("Date is invalid");
+        }
+        else
+        {
+            if (dd >= 1 && dd <= 28)
+                printf("Date is valid");
+            else
+                printf("Date is invalid");
+        }
+    }
+    else if (mm == 4 || mm == 6 || mm == 9 || mm == 11)
+    {
+        if (dd >= 1 && dd <= 30)
+            printf("Date is valid");
+        else
+            printf("Date is invalid");
+    }
+    else
+    {
+        if (dd >= 1 && dd <= 31)
+            printf("Date is valid");
+        else
+            printf("Date is invalid");
+    }
+}
+
+int main()
+{
+    validateDate();
+    return 0;
+}
+```
 # Output:
+<img width="725" height="316" alt="image" src="https://github.com/user-attachments/assets/1d6da212-b6d5-4d15-b054-0e3795f5428c" />
+<img width="957" height="340" alt="image" src="https://github.com/user-attachments/assets/34960234-5826-4845-98d3-00167d4f3781" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
